@@ -1,5 +1,5 @@
 -- [ Settings ] --
-getgenv().AutoReady = true
+getgenv().AutoReady = false
 getgenv().AutoSkip = true
 getgenv().AutoSkipCutscenes = true
 getgenv().AutoPickups = true
@@ -8,11 +8,10 @@ getgenv().AutoRestart = true
 -- [ End Settings ] --
 
 local TDS = loadstring(game:HttpGet("https://getaether.cc/loader.lua"))()
-
+game:GetService("ReplicatedStorage"):WaitForChild("Network"):WaitForChild("PlayerManager"):WaitForChild("RE:UserLoadout"):FireServer()
 TDS:Loadout("Gatling Gun", "Pyromancer", "Assassin", "None", "None")
 TDS:Mode("Act1Easy")
 TDS:GameInfo("Sorrowful Remains", {})
-game:GetService("ReplicatedStorage"):WaitForChild("Network"):WaitForChild("PlayerManager"):WaitForChild("RE:UserLoadout"):FireServer()
 
 TDS:Place("Pyromancer", 25.739416122436523, 2.0009984970092773, 197.75680541992188)
 
@@ -20,7 +19,7 @@ TDS:Place("Pyromancer", 25.739416122436523, 2.0009984970092773, 197.756805419921
 TDS:Upgrade(1)
 TDS:SetTarget(1, "Random")
 TDS:SetTarget(1, "Farthest")
-
+TDS:Ready()
 -- [ Wave 2 ] --
 TDS:Upgrade(1)
 TDS:Place("Assassin", 31.79357147216797, 2.0009982585906982, 198.96853637695312)
